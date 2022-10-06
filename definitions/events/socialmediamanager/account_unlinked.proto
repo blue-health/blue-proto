@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-option go_package = "github.com/blue-health/blue-proto/generated/go/events/socialmediamanager";
-
 package socialmediamanager;
 
 import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/blue-health/blue-proto/generated/go/events/socialmediamanager";
 
 message AccountUnlinked {
   // Standard definitions
