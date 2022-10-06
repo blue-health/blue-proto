@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option go_package = "github.com/blue-health/blue-proto/generated/go/events/socialmediamanager";
+
+package socialmediamanager;
+
+import "google/protobuf/timestamp.proto";
+
+message AccountUnlinked {
+  // Standard definitions
+  message Service {
+    string name = 1;
+    string namespace = 2;
+  }
+  message Resource {
+    string id = 1;
+    string type = 2;
+  }
+  message Operation {
+    string id = 1;
+    string method = 2;
+    string producer = 3;
+    google.protobuf.Timestamp timestamp = 4;
+  }
+  message Authentication {
+    string author_id = 1;
+    string subject_id = 2;
+  }
+
+  // Specific definitions
+  string platform = 1;
+}

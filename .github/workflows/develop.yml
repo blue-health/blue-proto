@@ -1,0 +1,14 @@
+name: Develop
+
+on:
+  push:
+    branches:
+      - develop
+    paths-ignore:
+      - ".local/**"
+      - "reference/**"
+
+jobs:
+  ci:
+    name: CI
+    uses: blue-health/blue-proto/.github/workflows/ci.yml@develop
