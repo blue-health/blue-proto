@@ -5,14 +5,13 @@ package socialmediamanager;
 option go_package = "github.com/blue-health/blue-proto/generated/go/events/socialmediamanager";
 
 message AccountLinked {
-  string service_name = 1;
-  string service_namespace = 2;
-  string resource_id = 3;
-  string resource_type = 4;
-  int64 timestamp_seconds = 5;
-  int32 timestamp_nanos = 6;
-  string author_id = 7;
-  string subject_id = 8;
+  string operation_name = 1;
+  string service_name = 2;
+  string service_namespace = 3;
+  string resource_id = 4;
+  string resource_type = 5;
+  string author_id = 6;
+  string subject_id = 7;
 
-  string platform = 9;
+  string platform = 8;
 }
