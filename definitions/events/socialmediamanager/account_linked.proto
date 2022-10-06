@@ -4,7 +4,7 @@ package socialmediamanager;
 
 option go_package = "github.com/blue-health/blue-proto/generated/go/events/socialmediamanager";
 
-message AccountUnlinked {
+message AccountLinked {
   string service_name = 1;
   string service_namespace = 2;
   string resource_id = 3;
