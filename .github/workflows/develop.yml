@@ -6,6 +6,7 @@ on:
       - develop
     paths-ignore:
       - ".local/**"
+      - ".github/**"
       - "reference/**"
       - "generated/**"
 
