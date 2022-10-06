@@ -7,8 +7,9 @@ on:
     paths-ignore:
       - ".local/**"
       - "reference/**"
+      - "generated/**"
 
 jobs:
-  ci:
-    name: CI
-    uses: blue-health/blue-proto/.github/workflows/ci.yml@develop
+  cd:
+    name: CD
+    uses: blue-health/blue-proto/.github/workflows/cd.yml@develop
