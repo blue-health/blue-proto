@@ -11,6 +11,11 @@ GO_OUT_EVENT_DEFINTIONS=generated/go/events
 .PHONY: all events
 all: events
 
-events:
+events: scrub-events
 	@echo "$(OK_COLOR)==> Generating Go code for events...$(NO_COLOR)"
 	@protoc --proto_path=$(EVENT_DEFINITIONS) $(EVENT_DEFINITIONS_PATH) --go_out=$(GO_OUT_EVENT_DEFINTIONS) --go_opt=paths=source_relative
+
+scrub-events:
+	@echo "$(OK_COLOR)==> Scrubbing generated Go code for events...$(NO_COLOR)"
+	@rm -r $(GO_OUT_EVENT_DEFINTIONS)
+	@mkdir -p $(GO_OUT_EVENT_DEFINTIONS)
