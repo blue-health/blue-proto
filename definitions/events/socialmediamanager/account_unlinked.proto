@@ -16,15 +16,9 @@ message AccountUnlinked {
     string type = 2;
   }
 
-  message Operation {
-    string id = 1;
-    string method = 2;
-    string producer = 3;
-
-    message Timestamp {
-      int64 seconds = 1;
-      int32 nanos = 2;
-    }
+  message Timestamp {
+    int64 seconds = 1;
+    int32 nanos = 2;
   }
 
   message Authentication {
