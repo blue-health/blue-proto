@@ -9,4 +9,4 @@ on:
 jobs:
   ci:
     name: CI
-    uses: blue-health/blue-proto/.github/workflows/ci.yml@develop
+    uses: blue-health/blue-proto/.github/workflows/ci.yml@feature/support-ts-output
