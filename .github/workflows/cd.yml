@@ -22,6 +22,11 @@ jobs:
         with:
           go-version: 1.19
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       - name: Setup Protoc
         uses: arduino/setup-protoc@v1
         with:
@@ -29,6 +34,9 @@ jobs:
 
       - name: Setup Protoc Gen Go
         run: go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+
+      - name: Setup Protoc Gen TS
+        run: npm install ts-protoc-gen
 
       - name: Generate
         run: make events
