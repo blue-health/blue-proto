@@ -14,3 +14,5 @@ jobs:
   cd:
     name: CD
     uses: blue-health/blue-proto/.github/workflows/cd.yml@develop
+    secrets:
+      personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
