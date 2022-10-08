@@ -6,7 +6,17 @@
   
 ## Purpose
 
+This repo houses Protobuf contracts we use at Blue to define our internal services and events. Upon any modifications to the schema, the CI automatically rebuilds the client/server stubs as well as event structs for our target langauges, Golang and Typescript. This repo, versioned via Github releases, can then be imported by each ecosystem's package manager.
+
 ## Structure
+
+- `.github/workflows/`: GitHub Actions CI workflows
+- `definitions`: Proto definitions
+  - `events`: Proto schemas for events enabling asynchronous communication
+  - `services`: Proto schemas for GRPC services defining contracts between our microservices
+- `generated`: Auto-generated cliend code
+  - `events`: Language-specific defintions of the events
+  - `services`: Language-specific defintions of the GRPC clients/servers/requests/responses
 
 ## Authors
 
