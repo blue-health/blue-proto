@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package identity;
+
+option go_package = "github.com/blue-health/blue-proto/generated/go/services/identity";
+
+service Service {
+  rpc Get(GetRequest) returns (GetReply) {}
+}
+
+message GetRequest { string id = 1; }
+
+message GetReply { string id = 1; }
