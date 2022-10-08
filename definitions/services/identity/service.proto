@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package identity;
 
-option go_package = "github.com/blue-health/blue-proto/generated/go/services/identity";
+option go_package = "/identity";
 
 service Service {
   rpc Get(GetRequest) returns (GetReply) {}
