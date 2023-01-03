@@ -4,7 +4,7 @@ package identity;
 
 option go_package = "github.com/blue-health/blue-proto/generated/go/events/identity";
 
-message EmailVerification {
-  string link = 1;
+message RegistrationEmailVerificationRequested {
+  string url = 1;
   string email = 2;
 }
