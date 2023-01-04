@@ -6,4 +6,5 @@ option go_package = "github.com/blue-health/blue-proto/generated/go/events/ident
 
 message IdentityCreated {
   string author_id = 1;
+  string source = 2;
 }
