@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package identity;
+
+option go_package = "github.com/blue-health/blue-proto/generated/go/events/identity";
+
+message IdentityCreated {
+  string author_id = 1;
+  string subject_id = 2;
+  string source = 3;
+}
