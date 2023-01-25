@@ -9,4 +9,5 @@ message IdentityStateTransitioned {
   string subject_id = 2;
   string transition = 3;
   string state = 4;
+  string reason = 5;
 }
