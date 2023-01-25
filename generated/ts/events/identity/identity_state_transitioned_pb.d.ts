@@ -16,6 +16,9 @@ export class IdentityStateTransitioned extends jspb.Message {
   getState(): string;
   setState(value: string): void;
 
+  getReason(): string;
+  setReason(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IdentityStateTransitioned.AsObject;
   static toObject(includeInstance: boolean, msg: IdentityStateTransitioned): IdentityStateTransitioned.AsObject;
@@ -32,6 +35,7 @@ export namespace IdentityStateTransitioned {
     subjectId: string,
     transition: string,
     state: string,
+    reason: string,
   }
 }
 

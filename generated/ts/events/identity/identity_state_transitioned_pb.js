@@ -72,7 +72,8 @@ proto.identity.IdentityStateTransitioned.toObject = function(includeInstance, ms
     authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     subjectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     transition: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    state: jspb.Message.getFieldWithDefault(msg, 4, "")
+    state: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    reason: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -124,6 +125,10 @@ proto.identity.IdentityStateTransitioned.deserializeBinaryFromReader = function(
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setState(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReason(value);
       break;
     default:
       reader.skipField();
@@ -179,6 +184,13 @@ proto.identity.IdentityStateTransitioned.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getReason();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -254,6 +266,24 @@ proto.identity.IdentityStateTransitioned.prototype.getState = function() {
  */
 proto.identity.IdentityStateTransitioned.prototype.setState = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string reason = 5;
+ * @return {string}
+ */
+proto.identity.IdentityStateTransitioned.prototype.getReason = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.identity.IdentityStateTransitioned} returns this
+ */
+proto.identity.IdentityStateTransitioned.prototype.setReason = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
