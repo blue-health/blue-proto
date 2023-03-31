@@ -21,7 +21,7 @@ all: events
 events: scrub-events
 	@echo "$(OK_COLOR)==> Generating Go code for events...$(NO_COLOR)"
 	@protoc --proto_path=$(EVENT_DEFINITIONS) --go_out=$(GO_OUT_EVENT_DEFINTIONS) --go_opt=paths=source_relative $(EVENT_DEFINITIONS_PATH)
-	@protoc --proto_path=$(EVENT_DEFINITIONS) --plugin="protoc-gen-ts=$(PROTOC_GEN_TS_PATH)" --js_out="import_style=commonjs,binary:$(TS_OUT_EVENT_DEFINTIONS)" --ts_out="$(TS_OUT_EVENT_DEFINTIONS)" $(EVENT_DEFINITIONS_PATH)
+	@protoc --proto_path=$(EVENT_DEFINITIONS) --plugin="protoc-gen-ts=$(PROTOC_GEN_TS_PATH)" --js_out="import_style=commonjs_strict,binary:$(TS_OUT_EVENT_DEFINTIONS)" --ts_out="$(TS_OUT_EVENT_DEFINTIONS)" $(EVENT_DEFINITIONS_PATH)
 
 scrub-events:
 	@echo "$(OK_COLOR)==> Scrubbing generated code for events...$(NO_COLOR)"
