@@ -1,9 +1,9 @@
-// package: socialmediamanager
-// file: socialmediamanager/service_event.proto
+// package: log
+// file: log/event_log.proto
 
 import * as jspb from "google-protobuf";
 
-export class ServiceEvent extends jspb.Message {
+export class OperationLog extends jspb.Message {
   getOperationName(): string;
   setOperationName(value: string): void;
 
@@ -42,16 +42,16 @@ export class ServiceEvent extends jspb.Message {
   addPermissions(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ServiceEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: ServiceEvent): ServiceEvent.AsObject;
+  toObject(includeInstance?: boolean): OperationLog.AsObject;
+  static toObject(includeInstance: boolean, msg: OperationLog): OperationLog.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ServiceEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ServiceEvent;
-  static deserializeBinaryFromReader(message: ServiceEvent, reader: jspb.BinaryReader): ServiceEvent;
+  static serializeBinaryToWriter(message: OperationLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OperationLog;
+  static deserializeBinaryFromReader(message: OperationLog, reader: jspb.BinaryReader): OperationLog;
 }
 
-export namespace ServiceEvent {
+export namespace OperationLog {
   export type AsObject = {
     operationName: string,
     operationType: string,
