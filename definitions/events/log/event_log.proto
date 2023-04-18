@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package socialmediamanager;
+package log;
 
-option go_package = "github.com/blue-health/blue-proto/generated/go/events/socialmediamanager";
+option go_package = "github.com/blue-health/blue-proto/generated/go/events/log";
 
-message ServiceEvent {
+message OperationLog {
   string operation_name = 1;
   string operation_type = 2;
   map<string, string> operation_labels = 3;
