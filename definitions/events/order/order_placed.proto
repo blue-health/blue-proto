@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package order;
+
+option go_package = "github.com/blue-health/blue-proto/generated/go/events/order";
+
+message OrderPlaced {
+  message Amount {
+    int64 value = 1;
+    string currency = 2;
+  }
+  message TaxRate {
+    int32 rate = 1;
+    string kind = 2;
+  }
+  message ProductInfo {
+    string id = 1;
+    string sku = 2;
+    string name = 3;
+    string category = 4;
+    string description = 5;
+    repeated string tags = 6;
+  }
+  message LineItem {
+    string id = 1;
+    string product_id = 2;
+    string fulfillment_id = 3;
+    int64 number = 4;
+    TaxRate tax_rate = 5;
+    int64 quantity = 6;
+    int64 multiplicity = 7;
+    Amount original_price = 8;
+    Amount original_line_price = 9;
+    Amount final_price = 10;
+    Amount final_line_price = 11;
+    ProductInfo product_info = 12;
+  }
+  message Address {
+    string id = 1;
+    int64 debtor_id = 2;
+    string name = 3;
+    string street = 4;
+    string street_number = 5;
+    string post_code = 6;
+    string city = 7;
+    string country = 8;
+    string email = 9;
+    string phone = 10;
+    string contact_person = 11;
+  }
+  message Fulfillment {
+    string id = 1;
+    repeated string line_item_ids = 2;
+    string state = 3;
+    int64 number = 4;
+    Address address = 5;
+  }
+  string id = 1;
+  string identity_id = 2;
+  repeated string tags = 3;
+  string note = 4;
+  string state = 5;
+  int64 number = 6;
+  Amount subtotal_price = 7;
+  Amount shipping_price = 8;
+  Amount total_price = 9;
+  Amount tax_price = 10;
+  repeated LineItem line_items = 11;
+  repeated Fulfillment fulfillments = 12;
+}
